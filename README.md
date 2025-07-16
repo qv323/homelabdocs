@@ -13,44 +13,40 @@ My goal is to create a functional, educational environment for learning and expe
 <details>
 <summary><strong>Tools</strong></summary>
 
-<details>
+&nbsp;&nbsp;<details>
 <summary><strong>Network Management</strong></summary>
 
-- [Network Management](#network-management)
-    - [Tera Term](#tera-term)
-    - [TFTPd64](#tftpd64)
-    - [Winbox / WebFig](#winbox--webfig)
-    - [The Dude](#the-dude)
-    - [USB Drives](#usb-drives)
-    - [WinSCP](#winscp)
+&nbsp;&nbsp;&nbsp;&nbsp;- [Tera Term](#tera-term)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [TFTPd64](#tftpd64)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [Winbox / WebFig](#winbox--webfig)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [The Dude](#the-dude)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [USB Drives](#usb-drives)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [WinSCP](#winscp)
 
 </details>
 
-<details>
+&nbsp;&nbsp;<details>
 <summary><strong>Virtualization & Automation</strong></summary>
 
-- [Virtualization & Automation](#virtualization--automation)
-    - [Proxmox VE Web UI](#proxmox-ve-web-ui)
-    - [Proxmox Shell/SSH](#proxmox-shellssh)
-    - [Ansible](#ansible)
+&nbsp;&nbsp;&nbsp;&nbsp;- [Proxmox VE Web UI](#proxmox-ve-web-ui)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [Proxmox Shell/SSH](#proxmox-shellssh)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [Ansible](#ansible)
 
 </details>
 
-<details>
+&nbsp;&nbsp;<details>
 <summary><strong>Backup & Config Management</strong></summary>
 
-- [Backup & Config Management](#backup--config-management)
-    - [External SSD/HDD](#external-ssdhdd)
+&nbsp;&nbsp;&nbsp;&nbsp;- [External SSD/HDD](#external-ssdhdd)
 
 </details>
 
-<details>
+&nbsp;&nbsp;<details>
 <summary><strong>Monitoring & Misc</strong></summary>
 
-- [Monitoring & Misc](#monitoring--misc)
-    - [MobaXterm / PuTTY](#mobaxterm--putty)
-    - [HDMI Splitter and Monitor](#hdmi-splitter-and-monitor)
-    - [Lenovo Legion Laptop](#lenovo-legion-laptop)
+&nbsp;&nbsp;&nbsp;&nbsp;- [MobaXterm / PuTTY](#mobaxterm--putty)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [HDMI Splitter and Monitor](#hdmi-splitter-and-monitor)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [Lenovo Legion Laptop](#lenovo-legion-laptop)
 
 </details>
 
@@ -62,15 +58,7 @@ My goal is to create a functional, educational environment for learning and expe
 - [Automation](#automation)
 - [Proxmox & VMware Notes](#proxmox--vmware-notes)
 - [Lessons Learned & Best Practices](#lessons-learned--best-practices)
-- [Future Plans](#future-plans)
-
-- [Disaster Recovery](#disaster-recovery)
-- [Update & Patch Management](#update--patch-management)
-- [Backup Routines](#backup-routines)
-- [Automation](#automation)
-- [Proxmox & VMware Notes](#proxmox--vmware-notes)
-- [Lessons Learned & Best Practices](#lessons-learned--best-practices)
-- [Future Plans](#future-plans)
+- [Future Plans](#future-plan)
 
 ---
 
