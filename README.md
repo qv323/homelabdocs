@@ -11,6 +11,7 @@ My goal is to create a functional, educational environment for learning and expe
 - [Networking & VLANs](#networking--vlans)
 - [Disaster Recovery](#disaster-recovery)
 - [Backup Routines](#backup-routines)
+- [Updates and patch Management]
 - [Automation](#automation)
 - [Proxmox & VMware Notes](#proxmox--vmware-notes)
 - [Lessons Learned & Best Practices](#lessons-learned--best-practices)
@@ -186,6 +187,37 @@ This section covers the physical components in my homelab, including compute, st
   - All procedures for failover, restore, and snapshotting are written and tested
 
 ---
+
+# Update & Patch Management
+
+This section documents how to keep core homelab systems updated, patched, and secure. Always **back up your config** before performing any major updates or patches.
+
+---
+
+## MikroTik CRS310-8G+2S+IN
+
+### Checking for Updates via Web Interface (Recommended)
+
+1. **Login to the MikroTik GUI** (Winbox, WebFig, or browser).
+2. Go to **System → Packages**.
+3. Click **Check for Updates**.
+4. Select the preferred channel (**stable** is recommended).
+5. Click **Download & Install**.
+6. The device will download the update, install, and reboot automatically.
+
+### Manual Package Upload & Install
+
+1. **Download the latest package** for your device from [mikrotik.com/download](https://mikrotik.com/download).
+2. Login to the MikroTik GUI.
+3. Go to **Files** in the menu.
+4. **Upload** the `.npk` package (drag-and-drop or use the upload button).
+5. Go to **System → Packages**.
+6. **Enable** the new package if it’s not already.
+7. **Reboot** the device.
+8. The new update or feature will be active after reboot.
+
+### CLI Method 
+- Upload the package via SCP, then SSH in and run:
 
 ## Backup Routines
 
