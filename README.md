@@ -231,6 +231,32 @@ This section documents how to keep core homelab systems updated, patched, and se
 
 - **Test Restores:**  
   - Periodic test restores to validate backup integrity
+ 
+  - ## Brocade ICX7250: Update & Patch Management
+
+Keeping the Brocade ICX7250 firmware (FastIron OS) up to date improves security, stability, and adds new features. **Always back up your running config before upgrading.**
+
+---
+
+### 1. Check Current Firmware Version
+
+  - Connect to switch via serial console (Tera Term), SSH, or Telnet, then run:
+
+---
+
+### 2. Download Latest Firmware
+
+- Go to [Brocade Downloads (now Ruckus)](https://support.ruckuswireless.com/software?filter=104#firmwares)
+- Download both the **FastIron OS image (`.bin`)** and the matching **boot or U-Boot image (`.img`)** for your model (ICX7250).
+
+---
+
+### 3. Transfer Firmware to Switch
+
+You can use **TFTP, FTP, or USB stick** (formatted FAT32) to copy the new images to your switch.
+
+#### TFTP Example (common in labs)
+Assuming your TFTP server IP is `192.168.1.100` and you place the new `.bin` in its root directory:
 
 ---
 
