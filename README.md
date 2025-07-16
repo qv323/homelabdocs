@@ -64,7 +64,7 @@ This section covers the physical components in my homelab, including compute, st
 ---
 
 ### Dell OptiPlex 7050 SFF (NAS)
-- **CPU:** [Fill in if desired, e.g. Intel i5-7500]
+- **CPU:** Intel i7-7700
 - **RAM:** 16GB DDR4
 - **OS Storage:** 256GB NVMe SSD
 - **Data Storage:** 4 x 8TB 3.5" HDDs (RAID 10, LSI SAS9211-8i controller)
@@ -78,7 +78,7 @@ This section covers the physical components in my homelab, including compute, st
 - **Motherboard:** ASUS TUF GAMING B560M-PLUS (mATX)
 - **CPU:** Intel Core i7-11700KF (8C/16T, 11th Gen)
 - **RAM:** 64GB G.SKILL Trident Z RGB DDR4-3600 CL18-22-22-42 (2x32GB)
-- **Storage:** [Fill in, e.g. 1TB NVMe SSD]
+- **Storage:** 128gb NVMe SSD
 - **GPU:** GTX 1650
 - **NIC:** Intel X520 dual-port 10Gb SFP+ NIC
 - **PSU:** ATX
@@ -89,7 +89,7 @@ This section covers the physical components in my homelab, including compute, st
 ---
 
 ### Intel NUC (Utility Node)
-- **Model:** [Fill in, e.g. NUC8i7BEH]
+- **Model:** NUC8i7BEH
 - **CPU:** Intel Core i7-8650U
 - **RAM:** 16GB DDR4
 - **OS Storage:** 128GB SSD
@@ -100,8 +100,8 @@ This section covers the physical components in my homelab, including compute, st
 ---
 
 ### HP ProLiant G7 Servers (Retired/Phasing Out)
-- **CPU:** [Fill in, e.g. Dual Xeon E5-2670]
-- **RAM:** [Fill in, e.g. 64GB ECC]
+- **CPU:**  Dual Xeon E5-2670
+- **RAM:**  128GB ECC DDR3
 - **Storage:** Mixed SAS HDDs
 - **Purpose:** Used for legacy and experimental workloads; replaced by newer, more efficient systems
 
@@ -112,8 +112,8 @@ This section covers the physical components in my homelab, including compute, st
 ### Main Switch: MikroTik CRS310-8G+2S+IN
 - **Role:** Core switch, 10Gb SFP+ trunking, VLAN segmentation, primary LAN backbone
 - **Notes:**  
-  - Houses all active nodes except mATX and NAS
-  - Connected to all 10Gb NICs with DAC cables
+  - Houses all active nodes 1GB
+  - Connected to matx and NAS 10Gb NICs with DAC cables
 
 ### Brocade ICX7250 (10Gb Switch)
 - **Role:** Dedicated for 10Gb connectivity/expansion
