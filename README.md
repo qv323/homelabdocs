@@ -13,26 +13,56 @@ My goal is to create a functional, educational environment for learning and expe
 <details>
 <summary><strong>Tools</strong></summary>
 
-- [Tools](#tools)
-    - [Network Management](#network-management)
-        - [Tera Term](#tera-term)
-        - [TFTPd64](#tftpd64)
-        - [Winbox / WebFig](#winbox--webfig)
-        - [The Dude](#the-dude)
-        - [USB Drives](#usb-drives)
-        - [WinSCP](#winscp)
-    - [Virtualization & Automation](#virtualization--automation)
-        - [Proxmox VE Web UI](#proxmox-ve-web-ui)
-        - [Proxmox Shell/SSH](#proxmox-shellssh)
-        - [Ansible](#ansible)
-    - [Backup & Config Management](#backup--config-management)
-        - [External SSD/HDD](#external-ssdhdd)
-    - [Monitoring & Misc](#monitoring--misc)
-        - [MobaXterm / PuTTY](#mobaxterm--putty)
-        - [HDMI Splitter and Monitor](#hdmi-splitter-and-monitor)
-        - [Lenovo Legion Laptop](#lenovo-legion-laptop)
+<details>
+<summary><strong>Network Management</strong></summary>
+
+- [Network Management](#network-management)
+    - [Tera Term](#tera-term)
+    - [TFTPd64](#tftpd64)
+    - [Winbox / WebFig](#winbox--webfig)
+    - [The Dude](#the-dude)
+    - [USB Drives](#usb-drives)
+    - [WinSCP](#winscp)
 
 </details>
+
+<details>
+<summary><strong>Virtualization & Automation</strong></summary>
+
+- [Virtualization & Automation](#virtualization--automation)
+    - [Proxmox VE Web UI](#proxmox-ve-web-ui)
+    - [Proxmox Shell/SSH](#proxmox-shellssh)
+    - [Ansible](#ansible)
+
+</details>
+
+<details>
+<summary><strong>Backup & Config Management</strong></summary>
+
+- [Backup & Config Management](#backup--config-management)
+    - [External SSD/HDD](#external-ssdhdd)
+
+</details>
+
+<details>
+<summary><strong>Monitoring & Misc</strong></summary>
+
+- [Monitoring & Misc](#monitoring--misc)
+    - [MobaXterm / PuTTY](#mobaxterm--putty)
+    - [HDMI Splitter and Monitor](#hdmi-splitter-and-monitor)
+    - [Lenovo Legion Laptop](#lenovo-legion-laptop)
+
+</details>
+
+</details>
+
+- [Disaster Recovery](#disaster-recovery)
+- [Update & Patch Management](#update--patch-management)
+- [Backup Routines](#backup-routines)
+- [Automation](#automation)
+- [Proxmox & VMware Notes](#proxmox--vmware-notes)
+- [Lessons Learned & Best Practices](#lessons-learned--best-practices)
+- [Future Plans](#future-plans)
 
 - [Disaster Recovery](#disaster-recovery)
 - [Update & Patch Management](#update--patch-management)
