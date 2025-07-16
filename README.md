@@ -248,6 +248,85 @@ Assuming your TFTP server IP is `192.168.1.100` and you place the new `.bin` in 
 
 ---
 
+Do the same for the boot image if updating:
+(Replace filenames as needed.)
+
+---
+
+### 4. USB-only Update Workflow
+
+**Best for airgapped switches or if you don't have a TFTP server handy.**
+
+1. Format a USB stick as FAT32.
+2. Place the OS image (`.bin`) and/or boot image (`.img`) at the root of the USB drive.
+3. Plug the USB into the Brocade’s USB port.
+4. Connect to the console.
+5. Run:
+
+
+*(Replace filenames as needed.)*
+6. Check images:
+7. Set boot to primary (if needed):
+8. Reboot:
+
+---
+
+### 5. Activate New Firmware
+
+If not already set, choose which partition to boot from:
+Then **reboot**:
+
+---
+
+### 6. Verify Upgrade
+
+After reboot, confirm with:
+
+---
+
+### 7. Quick Restore from Serial Console (XMODEM Recovery)
+
+**If the Brocade won't boot, or image is corrupted, use XMODEM over serial:**
+
+1. Connect serial console to the switch (use Tera Term on your Lenovo laptop).
+2. Reboot or power cycle the switch.
+3. Interrupt the bootloader with `b` or by pressing a key if prompted.
+4. At the bootloader prompt, enter:
+5. In Tera Term, go to **File > Transfer > XMODEM > Send**, and select the OS image `.bin` file.
+6. Wait for transfer (can be 20+ minutes).
+7. When done, set the switch to boot from the recovered image:
+8. Reboot:
+9. When back up, verify with:
+
+---
+
+### Cheat Sheet (CLI Reference)
+
+| Task                       | CLI Command Example                                            |
+|----------------------------|---------------------------------------------------------------|
+| Show current version       | `show version`                                                |
+| Show current images        | `show flash`                                                  |
+| Copy OS image (TFTP)       | `copy tftp flash 192.168.1.100 FI7250.bin primary`            |
+| Copy bootrom (TFTP)        | `copy tftp bootrom 192.168.1.100 mnz10114.bin`                |
+| Copy OS image (USB)        | `copy usb FI7250.bin flash primary`                           |
+| Activate primary image     | `boot system flash primary`                                   |
+| Reboot                     | `reload`                                                      |
+| Backup config (TFTP)       | `copy running-config tftp 192.168.1.100 backup.cfg`           |
+| XMODEM recovery            | `copy xmodem flash primary`                                   |
+
+---
+
+**Tips:**
+- Always backup config before upgrades:
+ ```
+ copy running-config tftp 192.168.1.100 mybackup.cfg
+ ```
+- Only use images for the ICX7250—using the wrong model may brick your device.
+- If upgrading both bootrom and OS, do bootrom first, then OS.
+- Don’t interrupt the switch during update or reboot.
+
+---
+
 
 ## Backup Routines
 
