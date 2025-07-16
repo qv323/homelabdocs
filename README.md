@@ -5,7 +5,9 @@ My goal is to create a functional, educational environment for learning and expe
 
 ---
 
-## Table of Contents
+<details>
+<summary><strong>Table of Contents</strong></summary>
+
 - [Overview](#overview)
 - [Cluster Architecture](#cluster-architecture)
 - [Networking & VLANs](#networking--vlans)
@@ -35,6 +37,7 @@ My goal is to create a functional, educational environment for learning and expe
 - [Lessons Learned & Best Practices](#lessons-learned--best-practices)
 - [Future Plans](#future-plans)
 
+</details>
 ---
 
 ## Overview
