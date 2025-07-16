@@ -149,6 +149,8 @@ This section covers the physical components in my homelab, including compute, st
 - **Storage:** Mixed SAS HDDs
 - **Purpose:** Used for legacy and experimental workloads; replaced by newer, more efficient systems
 
+[⬆️ Back to Top](#table-of-contents)
+
 ---
 
 ## Networking
