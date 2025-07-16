@@ -188,7 +188,7 @@ This section covers the physical components in my homelab, including compute, st
 
 ---
 
-# Update & Patch Management
+## Update & Patch Management
 
 This section documents how to keep core homelab systems updated, patched, and secure. Always **back up your config** before performing any major updates or patches.
 
