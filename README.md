@@ -149,6 +149,8 @@ This section covers the physical components in my homelab, including compute, st
 - **Storage:** Mixed SAS HDDs
 - **Purpose:** Used for legacy and experimental workloads; replaced by newer, more efficient systems
 
+--- 
+
 [⬆️ Back to Top](#table-of-contents)
 
 ---
@@ -170,6 +172,10 @@ This section covers the physical components in my homelab, including compute, st
   - 80mm intake blower
   - OEM fans replaced with two 40mm Noctua fans for silent operation
 
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
+
 ---
 
 ## Rack & Cooling
@@ -186,6 +192,10 @@ This section covers the physical components in my homelab, including compute, st
 - **External ATX power supply:** Powers all PCIe riser cards for 10Gb NICs; grounded to each Dell case
 - **Monitor setup:** HDMI from every node into a splitter for KVM-style multi-system access
 
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
+
 ---
 
 ## Summary Notes & Unique Features
@@ -196,6 +206,10 @@ This section covers the physical components in my homelab, including compute, st
 - Cooling is a mix of premium Noctua fans and custom airflow solutions for quiet, cool operation
 - Serial console access for Brocade switch via handmade cable and Tera Term
 - Nearly all hardware (except mATX build and NAS) is housed in a single, ultra-compact 14U mini rack for simplicity and space savings
+
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
@@ -214,7 +228,11 @@ This section covers the physical components in my homelab, including compute, st
   - Consistent naming (mgmt0, prod0, etc.)
 
 - **Reference Diagram:**  
-  _(You can upload or link to a network diagram image here)_
+  _(upload or link to a network diagram image here)_
+
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
@@ -255,6 +273,10 @@ This section lists the core software, utilities, and hardware tools used to mana
 - **Purpose:** SCP/SFTP file transfer.
 - **How I Use It:**  
   Used to quickly move config files, firmware, or scripts to MikroTik and Proxmox systems directly from my management laptop.
+  
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
@@ -275,6 +297,10 @@ This section lists the core software, utilities, and hardware tools used to mana
 - **How I Use It:**  
   Runs on my Lenovo Legion or a dedicated VM. I use Ansible playbooks to automate software installs, push updates, and maintain consistent config across all Proxmox nodes, and for select network gear.
 
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
+
 ---
 
 ## Backup & Config Management
@@ -283,6 +309,10 @@ This section lists the core software, utilities, and hardware tools used to mana
 - **Purpose:** VM backups, ISO/image storage, and cold backups.
 - **How I Use It:**  
   Used for scheduled exports of VM images, keeping redundant copies of key configs, and offline storage of golden images.
+  
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
@@ -302,11 +332,19 @@ This section lists the core software, utilities, and hardware tools used to mana
 - **Purpose:** Primary management workstation.
 - **How I Use It:**  
   Used for everything—Tera Term console, Winbox, The Dude, Ansible playbooks, Proxmox access, TFTP server, file transfer, and more.
+  
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
 ## [Add your own!]
 If you use Docker, WireGuard, Pi-hole, OPNsense, a label printer, etc., add a section with a short “How I Use It” note.
+
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
@@ -323,12 +361,20 @@ If you use Docker, WireGuard, Pi-hole, OPNsense, a label printer, etc., add a se
 
 - **Documentation:**  
   - All procedures for failover, restore, and snapshotting are written and tested
+  - 
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
 # Update & Patch Management
 
 This section documents how to keep core homelab systems updated, patched, and secure. Always **back up your config** before performing any major updates or patches.
+
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
@@ -357,6 +403,11 @@ This section documents how to keep core homelab systems updated, patched, and se
 ### CLI Method 
 - Upload the package via SCP, then SSH in and run:
 
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
+
+---
  
 ## Brocade ICX7250: Update & Patch Management
 
@@ -463,6 +514,10 @@ After reboot, confirm with:
 - If upgrading both bootrom and OS, do bootrom first, then OS.
 - Don’t interrupt the switch during update or reboot.
 
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
+
 ---
 
 
@@ -479,7 +534,11 @@ After reboot, confirm with:
 - **Test Restores:**  
   - Periodic test restores to validate backup integrity
 
- ---
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
+
+---
 
 ## Automation
 
@@ -492,6 +551,10 @@ After reboot, confirm with:
 
 - **Documentation:**  
   - All scripts and automations are documented for easy reuse
+
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
@@ -507,6 +570,10 @@ After reboot, confirm with:
     - Centralized management = easier compliance, audits, patching
     - Fast failover, disaster recovery, and rollback
 
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
+
 ---
 
 ## Lessons Learned & Best Practices
@@ -518,6 +585,10 @@ After reboot, confirm with:
 - Scripting and templates save hours in the long run
 - Clear, simple documentation helps period
 
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
+
 ---
 
 ## Future Plans
@@ -526,6 +597,10 @@ After reboot, confirm with:
 - Experiment with advanced VLAN routing and firewalling
 - Explore hybrid cloud scenarios (self-hosted + cloud)
 - Continue improving documentation and sharing lessons
+
+--- 
+
+[⬆️ Back to Top](#table-of-contents)
 
 ---
 
