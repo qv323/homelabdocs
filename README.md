@@ -219,20 +219,8 @@ This section documents how to keep core homelab systems updated, patched, and se
 ### CLI Method 
 - Upload the package via SCP, then SSH in and run:
 
-## Backup Routines
-
-- **VM Backups:**  
-  - Daily/weekly backups to NAS
-  - NFS and local ZFS storage pools
-
-- **Configuration Backups:**  
-  - Regular backup of Proxmox configs, OPNsense configs, Pi-hole configs
-  - Backups stored both on NAS and cold USB storage
-
-- **Test Restores:**  
-  - Periodic test restores to validate backup integrity
  
-  - ## Brocade ICX7250: Update & Patch Management
+## Brocade ICX7250: Update & Patch Management
 
 Keeping the Brocade ICX7250 firmware (FastIron OS) up to date improves security, stability, and adds new features. **Always back up your running config before upgrading.**
 
@@ -259,6 +247,22 @@ You can use **TFTP, FTP, or USB stick** (formatted FAT32) to copy the new images
 Assuming your TFTP server IP is `192.168.1.100` and you place the new `.bin` in its root directory:
 
 ---
+
+
+## Backup Routines
+
+- **VM Backups:**  
+  - Daily/weekly backups to NAS
+  - NFS and local ZFS storage pools
+
+- **Configuration Backups:**  
+  - Regular backup of Proxmox configs, OPNsense configs, Pi-hole configs
+  - Backups stored both on NAS and cold USB storage
+
+- **Test Restores:**  
+  - Periodic test restores to validate backup integrity
+
+ ---
 
 ## Automation
 
