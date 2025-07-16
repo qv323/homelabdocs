@@ -10,6 +10,7 @@ My goal is to create a functional, educational environment for learning and expe
 - [Cluster Architecture](#cluster-architecture)
 - [Networking & VLANs](#networking--vlans)
 - [Disaster Recovery](#disaster-recovery)
+- [Update & Patch Management](#update--patch-management)
 - [Backup Routines](#backup-routines)
 - [Automation](#automation)
 - [Proxmox & VMware Notes](#proxmox--vmware-notes)
