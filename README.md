@@ -9,7 +9,7 @@ My goal is to create a functional, educational environment for learning and expe
 - [Overview](#overview)
 - [Cluster Architecture](#cluster-architecture)
 - [Networking & VLANs](#networking--vlans)
--[Tools](#tools)
+- [Tools](#tools)
     - [Network Management](#network-management)
         - [Tera Term](#tera-term)
         - [TFTPd64](#tftpd64)
