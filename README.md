@@ -5,12 +5,14 @@ My goal is to create a functional, educational environment for learning and expe
 
 ---
 
-<details>
-<summary><strong>Table of Contents</strong></summary>
-
+# Table of Contents
 - [Overview](#overview)
 - [Cluster Architecture](#cluster-architecture)
 - [Networking & VLANs](#networking--vlans)
+
+<details>
+<summary><strong>Tools</strong></summary>
+
 - [Tools](#tools)
     - [Network Management](#network-management)
         - [Tera Term](#tera-term)
@@ -29,6 +31,9 @@ My goal is to create a functional, educational environment for learning and expe
         - [MobaXterm / PuTTY](#mobaxterm--putty)
         - [HDMI Splitter and Monitor](#hdmi-splitter-and-monitor)
         - [Lenovo Legion Laptop](#lenovo-legion-laptop)
+
+</details>
+
 - [Disaster Recovery](#disaster-recovery)
 - [Update & Patch Management](#update--patch-management)
 - [Backup Routines](#backup-routines)
@@ -37,7 +42,6 @@ My goal is to create a functional, educational environment for learning and expe
 - [Lessons Learned & Best Practices](#lessons-learned--best-practices)
 - [Future Plans](#future-plans)
 
-</details>
 ---
 
 ## Overview
