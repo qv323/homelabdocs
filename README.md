@@ -11,7 +11,6 @@ My goal is to create a functional, educational environment for learning and expe
 - [Networking & VLANs](#networking--vlans)
 - [Disaster Recovery](#disaster-recovery)
 - [Backup Routines](#backup-routines)
-- [Updates and patch Management]
 - [Automation](#automation)
 - [Proxmox & VMware Notes](#proxmox--vmware-notes)
 - [Lessons Learned & Best Practices](#lessons-learned--best-practices)
@@ -188,7 +187,7 @@ This section covers the physical components in my homelab, including compute, st
 
 ---
 
-## Update & Patch Management
+# Update & Patch Management
 
 This section documents how to keep core homelab systems updated, patched, and secure. Always **back up your config** before performing any major updates or patches.
 
