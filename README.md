@@ -173,6 +173,99 @@ This section covers the physical components in my homelab, including compute, st
 
 ---
 
+# Tools
+
+This section lists the core software, utilities, and hardware tools used to manage, automate, monitor, or recover your homelab environment. Each tool includes a description and **how it’s used in this specific setup**.
+
+---
+
+## Network Management
+
+### **Tera Term**
+- **Purpose:** Serial console access for network devices.
+- **How I Use It:**  
+  Used for connecting to the Brocade ICX7250 via USB-to-serial cable on my Lenovo Legion. I use Tera Term for firmware upgrades, bootloader access, and config recovery.
+
+### **TFTPd64**
+- **Purpose:** Lightweight TFTP server for config and firmware transfer.
+- **How I Use It:**  
+  Runs on my Lenovo Legion whenever I need to push or pull firmware/config files to/from the Brocade switch or any device that supports TFTP.
+
+### **Winbox / WebFig**
+- **Purpose:** MikroTik configuration via GUI (Winbox app or browser).
+- **How I Use It:**  
+  Used to configure, back up, or update my MikroTik CRS310. Also used to check for RouterOS updates and upload new packages.
+
+### **The Dude**
+- **Purpose:** MikroTik’s network monitoring and mapping tool.
+- **How I Use It:**  
+  Installed on my Lenovo Legion. I use The Dude to monitor uptime, get SNMP graphs, track device status, and visualize my entire homelab network topology in real time.
+
+### **USB Drives**
+- **Purpose:** Offline firmware upgrades and config backup.
+- **How I Use It:**  
+  FAT32-formatted USB drives are used to update Brocade firmware or back up configs when I’m not on the same subnet, or if TFTP isn’t practical.
+
+### **WinSCP**
+- **Purpose:** SCP/SFTP file transfer.
+- **How I Use It:**  
+  Used to quickly move config files, firmware, or scripts to MikroTik and Proxmox systems directly from my management laptop.
+
+---
+
+## Virtualization & Automation
+
+### **Proxmox VE Web UI**
+- **Purpose:** Web-based virtualization management platform.
+- **How I Use It:**  
+  Main tool for managing all VMs and containers, snapshots, storage, and backups. I access the Web UI from my Lenovo or any browser on the LAN.
+
+### **Proxmox Shell/SSH**
+- **Purpose:** Command-line troubleshooting and automation.
+- **How I Use It:**  
+  Used for in-depth troubleshooting, template builds, and running shell scripts (including automated backups and updates) on all Proxmox hosts.
+
+### **Ansible**
+- **Purpose:** Automation and configuration management.
+- **How I Use It:**  
+  Runs on my Lenovo Legion or a dedicated VM. I use Ansible playbooks to automate software installs, push updates, and maintain consistent config across all Proxmox nodes, and for select network gear.
+
+---
+
+## Backup & Config Management
+
+### **External SSD/HDD**
+- **Purpose:** VM backups, ISO/image storage, and cold backups.
+- **How I Use It:**  
+  Used for scheduled exports of VM images, keeping redundant copies of key configs, and offline storage of golden images.
+
+---
+
+## Monitoring & Misc
+
+### **MobaXterm / PuTTY**
+- **Purpose:** SSH and serial console multipurpose terminals.
+- **How I Use It:**  
+  Sometimes used for SSH access to Proxmox, OPNsense, or for serial troubleshooting (as an alternative to Tera Term).
+
+### **HDMI Splitter and Monitor**
+- **Purpose:** KVM-style access for all rack devices.
+- **How I Use It:**  
+  All node HDMI outputs go through a splitter to a single secondary monitor, making physical troubleshooting and install/recovery much easier.
+
+### **Lenovo Legion Laptop**
+- **Purpose:** Primary management workstation.
+- **How I Use It:**  
+  Used for everything—Tera Term console, Winbox, The Dude, Ansible playbooks, Proxmox access, TFTP server, file transfer, and more.
+
+---
+
+## [Add your own!]
+If you use Docker, WireGuard, Pi-hole, OPNsense, a label printer, etc., add a section with a short “How I Use It” note.
+
+---
+
+
 ## Disaster Recovery
 
 - **Snapshots:**  
