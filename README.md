@@ -79,7 +79,7 @@ When a section in this README refers to a specific guide, checklist, or referenc
 
 ---
 
-## Hardware & Inventory
+## Hardware and Inventory
 
 - Full device inventory: Homelab Device Tracker.xlsx (NAS)
 - mATX Proxmox node configuration: mATX Proxmox Node Reference.pdf (NAS)
