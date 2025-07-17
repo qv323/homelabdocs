@@ -289,7 +289,7 @@ When a section in this README refers to a specific guide, checklist, or referenc
 
 ## Network Shares & ISO Library
 
-| Share Name         | Type      | Host (Node)   | Path / Volume           | Purpose / Usage                   | Access / Notes          |
+| Share Name         | Type      | Host (Node)   | Path / Volume           | Purpose / Usage                    | Access / Notes          |
 |--------------------|-----------|---------------|-------------------------|------------------------------------|-------------------------|
 | main_smb           | SMB/CIFS  | NAS (TrueNAS) | /mnt/tank/main_smb      | Primary user and data share        | Accessible via \\nas\main_smb |
 | vm_backup          | NFS       | NAS (TrueNAS) | /mnt/tank/vm_backup     | Proxmox VM backup datastore        | NFS mounted to all nodes |
@@ -312,13 +312,13 @@ When a section in this README refers to a specific guide, checklist, or referenc
 
 ### ZFS Datasets
 
-| Dataset         | Pool   | Mount Point             | Share Type   | ZFS Properties                       | Purpose / Usage                  | Snapshots         | Notes                                    |
+| Dataset         | Pool   | Mount Point             | Share Type   | ZFS Properties                        | Purpose / Usage                  | Snapshots         | Notes                                    |
 |-----------------|--------|-------------------------|--------------|---------------------------------------|----------------------------------|-------------------|------------------------------------------|
 | main_smb        | tank   | /mnt/tank/main_smb      | SMB          | compression=lz4, atime=off            | User shares, home dirs           | Daily, 7d         | Regular backup; full permissions         |
 | vm_backup       | tank   | /mnt/tank/vm_backup     | NFS          | sync=always, compression=off          | Proxmox VM backup target         | Nightly, 30d      | Proxmox storage.cfg NFS path             |
 | pbs_datastore   | tank   | /mnt/tank/pbs_datastore | NFS          | compression=zstd, recordsize=1M       | Proxmox Backup Server            | PBS policy        | Direct 10GbE NFS for PBS VM              |
 | iso_library     | tank   | /mnt/tank/iso_library   | SMB/NFS      | readonly=on, compression=lz4          | ISOs, templates                  | Weekly, 90d       | Included in all snapshot/cold backups    |
-| docs_exports    | tank   | /mnt/tank/docs_exports  | SMB/NFS      | snapdir=visible, compression=lz4       | Exported configs, docs           | Weekly, 90d       | DR configs/exports; Owner RW, others RO |
+| docs_exports    | tank   | /mnt/tank/docs_exports  | SMB/NFS      | snapdir=visible, compression=lz4      | Exported configs, docs           | Weekly, 90d       | DR configs/exports; Owner RW, others RO  |
 
 ---
 
@@ -335,15 +335,15 @@ When a section in this README refers to a specific guide, checklist, or referenc
 
 ### Snapshots, Validation & Retention
 
-| Dataset         | Schedule     | Retention    | Restore Validation           | Cold/Offsite Coverage        |
+| Dataset         | Schedule     | Retention    | Restore Validation           | Cold/Offsite Coverage       |
 |-----------------|--------------|-------------|------------------------------|------------------------------|
 | main_smb        | Daily 2AM    | 7 days      | Monthly restore test         | Yes, quarterly to ext. SSD   |
 | vm_backup       | Nightly      | 30 days     | Proxmox auto + manual test   | Yes, quarterly to ext. SSD   |
-| pbs_datastore   | PBS policy   | As set in PBS | PBS restore test monthly     | Yes, quarterly to ext. SSD   |
+| pbs_datastore   | PBS policy   | As set in PBS | PBS restore test monthly     | Yes, quarterly to ext. SSD |
 | iso_library     | Weekly Sun   | 90 days     | Manual file check quarterly  | Yes, quarterly to ext. SSD   |
 | docs_exports    | Weekly Sun   | 90 days     | Manual import after update   | Yes, quarterly to ext. SSD   |
 
-*All ZFS snapshots for critical datasets are included in the cold/offsite (external SSD/HDD) backup, performed quarterly and after major changes.*
+**All ZFS snapshots for critical datasets are included in the cold/offsite (external SSD/HDD) backup, performed quarterly and after major changes.**
 
 ---
 
@@ -353,11 +353,35 @@ When a section in this README refers to a specific guide, checklist, or referenc
 - **vm_backup / pbs_datastore**: NFS exports to trusted Proxmox nodes (root_squash, secure).
 - **iso_library**: Read-only for all users except admin; included in backup and restore tests.
 - **docs_exports**: Owner RW, others RO; protected by regular snapshot and offsite export.
+- 
+--
+
+### ZFS Properties & Rationale
+
+- **compression=lz4**: Fast and efficient; used on most datasets.
+- **compression=zstd**: Used for PBS datastore to improve deduplication.
+- **sync=always**: Used for NFS VM backup targets to protect data.
+- **readonly=on**: Prevents ISO/template library changes.
+- **atime=off**: Reduces write load, improves perf on file shares.
+- **snapdir=visible**: .zfs snapshots available to advanced users if needed.
+
+---
+
+### ZFS Pool/Backup Management
+
+- **Scrub main pool**: Monthly, or after adding/replacing disks.
+- **SMART tests**: Scheduled and monitored in TrueNAS.
+- **Snapshot replication/offsite**: Quarterly and before major changes (external SSD).
+- **Test restore**: At least monthly, from both local and cold backup.
+- **Snapshot schedule**: Set in TrueNAS for all key datasets above.
+
+---
+
+**All ISO images, custom templates, and golden images are covered by the same snapshot and cold/offsite backup as the rest of the core datasets—no risk of accidental loss or silent drift.**
 
 ---
 
 ### Storage Tree
-
 
 ---
 
