@@ -178,18 +178,25 @@ When a section in this README refers to a specific guide, checklist, or referenc
 
 ## Virtual Machines
 
-| Name           | Host/Node       | OS                | Services/Apps        | Network / VLAN  | Resources      | Notes                  |
-|----------------|-----------------|-------------------|----------------------|-----------------|---------------|------------------------|
-|                |                 |                   |                      |                 |               |                        |
-
+| Name                   | Host/Node   | OS/Base                  | Services/Apps             | Network         | Resources         | Notes                        |
+|------------------------|-------------|--------------------------|---------------------------|-----------------|-------------------|------------------------------|
+| 100 TrueNAS            | NAS         | TrueNAS (virtualized)    | NAS, PBS Datastore        | prod0 (10GbE)   | 8 vCPU, 32GB RAM  | Handles PBS/VM storage       |
+| 104 tinytester         | NAS         | ??? (likely Linux/CLI)   | Testing, diagnostics      | prod0 (10GbE)   | 2 vCPU, 8GB RAM   | Specify OS/services          |
+| 9000 tmpl-ubuntu-22.04 | NAS         | Ubuntu 22.04 (template)  | — (template)              | prod0 (10GbE)   | 4 vCPU, 24GB RAM  | Stopped, template VM         |
+| 101 vm-ubuntu-docker   | nuc1        | Ubuntu (Docker Host)     | Docker containers         | prod0 (1GbE)    | ???               | no services yet              |
+| 102 win11.standard.vm  | matx        | Windows 11 Standard      | General use/lab           | prod0 (10GbE)   | ???               | Update with details          |
+| 103 win11.GPU.vm       | matx        | Windows 11 (with GPU)    | GPU passthrough testing   | prod0 (10GbE)   | RTX1650           | Note GPU passthrough config  |
+| 105                    | dell1       | ???                      | ???                       | ???             | ???               | no services yet              |
+| 106                    | Dell2       | ???                      | ???                       | ???             | ???               | no services yet              |
+| 107                    | dell1       | ???                      | ???                       | ???             | ???               | no services yet              |
 
 ---
 
 ## Containers
 
-| Name         | Host/Node      | Image/Base     | Services/Apps   | Network     | Resources    | Notes          |
-|--------------|----------------|---------------|-----------------|-------------|-------------|---------------|
-|              |                |               |                 |             |             |               |
+| Name                        | Host/Node          | Image/Base                       | Services/Apps    | Network     | Resources    | Notes         |
+|-----------------------------|--------------------|----------------------------------|------------------|-------------|--------------|---------------|
+| 101 vm-ubuntu-docker        |     nuc1           |  Ubuntu (Docker Host)            |Docker containers |    prod0 (10GbE)           |               |
 
 ---
 
