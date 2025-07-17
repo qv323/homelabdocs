@@ -244,6 +244,10 @@ This section covers the physical components in my homelab, including compute, st
   - Bonded interfaces for 10Gb connectivity
   - VLAN-aware Linux bridges mapped to physical switch ports
   - Consistent naming (mgmt0, prod0, etc.)
+ 
+  **Reference Docs**
+- Physical wiring and quick reference diagrams: cluster config back script check.png (NAS)
+- VLAN port assignments: Needs updated Homelab VLAN Port Assignment Table.xlsx (NAS)
 
 - **Reference Diagram:**  
   _(upload or link to a network diagram image here)_
