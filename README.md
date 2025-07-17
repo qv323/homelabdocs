@@ -679,6 +679,8 @@ This section details all currently implemented backup routines, retention schedu
   📄 [Homelab Quick Fixes.pdf] (NAS)
 
 > “That sucked to fix, so I wrote it down for my future self.”
+> "Make your foundation a self-healing, invincible monster, then do the hmm let's see what happens."
+> "Create or fix it as if your family needed to use it, the family you like of course."
 
 - Document everything—assume you’ll need to fix it at 2am!
 - VLANs and segmentation improve security and reliability
