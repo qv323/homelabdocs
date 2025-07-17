@@ -14,6 +14,8 @@ My goal is to create a functional, educational environment for learning and expe
 - [Containers](#containers)
 - [Networking & VLANs](#networking--vlans)
 - [Network Shares & ISO Library](#network-shares--iso-library)
+- [ZFS Pools & Datasets](#zfs-pools--datasets)
+
 
 <details>
 <summary><strong>Tools</strong></summary>
