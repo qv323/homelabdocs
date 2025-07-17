@@ -706,13 +706,35 @@ This section details all currently implemented backup routines, retention schedu
 
 ## Future Plans
 
+This section lists projects, ideas, and improvements I am considering or planning for my homelab environment.  
+Many of these have supporting documentation or drafts stored in the `/homelab docs` directory (NAS), but are **not yet implemented, tested, or up to date**.
+
+### Planned / Draft Guides and Ideas
+
+- Possible Future Brocade VLAN Config Draft.docx (NAS)
+- Possible Future LibreNMS Deployment (Detailed Guide).docx (NAS)
+- Possible Future OPNsense Single NIC VLAN Proxmox Guide.docx (NAS)
+- IDEA Homelab Topology Diagram.pdf (NAS)
+- IDEA mATX Node Expansion.pdf (NAS)
+- Needs updated NFS HA Setup.docx (NAS)
+- Needs updated Homelab VLAN Port Assignment Table.xlsx (NAS)
+- Needs updated Homelab Device Tracker.xlsx (NAS)
+- Add a playbook Ansible.docx (NAS)
+- [Any other draft, possible, future, or needs updated file you want to track]
+
+### Example Aspirational Projects
+
 - Add more automation for VM provisioning and monitoring
+- Implement Proxmox API and PowerCLI for automation
 - Experiment with advanced VLAN routing and firewalling
 - Explore hybrid cloud scenarios (self-hosted + cloud)
-- Version control via GitHub or cloud is not currently implemented for infrastructure documentation and automation
+- Move infrastructure docs and automation scripts to version control (Git)
+- Enable centralized monitoring (e.g., LibreNMS or Grafana)
+- Schedule logs and backup alerts via app notification
 - Personal/family data:** Retained indefinitely on NAS with offsite cold backup
-- Implement Proxmox API and PowerCLI for automation
-- Logs that capture failures sent via some app to notify me
+- Version control via GitHub or cloud is not currently implemented for infrastructure documentation and automation
+> **Note:** These files and projects are referenced here for tracking and planning purposes only.  
+> They are not yet live, validated, or part of the main environment.
   
 --- 
 
