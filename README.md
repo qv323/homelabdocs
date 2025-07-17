@@ -7,7 +7,7 @@ My goal is to create a functional, educational environment for learning and expe
 
 # Table of Contents
 - [Overview](#overview)
-- [Documentation & Reference Files](#documentation-&-reference-files)
+- [Documentation & Reference Files](#documentation&reference-files)
 - [Cluster Architecture](#cluster-architecture)
 - [Networking & VLANs](#networking--vlans)
 
