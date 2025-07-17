@@ -94,8 +94,10 @@ When a section in this README refers to a specific guide, checklist, or referenc
 
 ## Cluster Architecture
 
+<img width="364" height="1039" alt="image" src="https://github.com/user-attachments/assets/58021ee5-32a0-4657-b5c6-bf1853b58cf4" />
+
 - **Hardware:**  
-  - 2 Dell 3080 Micro PCs (Proxmox nodes)
+  - 2 Dell 3080 Micro PCs (Proxmox nodes)                                                           
   - 1 Dell 7050 SFF (used as a NAS)
      -Intel/LSI SAS controllers for storage clustering
   - MikroTik CRS310-8G+2S+IN switc
