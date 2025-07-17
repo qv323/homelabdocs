@@ -185,6 +185,14 @@ When a section in this README refers to a specific guide, checklist, or referenc
 
 ---
 
+## Containers
+
+| Name         | Host/Node      | Image/Base     | Services/Apps   | Network     | Resources    | Notes          |
+|--------------|----------------|---------------|-----------------|-------------|-------------|---------------|
+|              |                |               |                 |             |             |               |
+
+---
+
 ## Networking
 
 ### Main Switch: MikroTik CRS310-8G+2S+IN
