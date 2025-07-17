@@ -324,12 +324,13 @@ When a section in this README refers to a specific guide, checklist, or referenc
 
 ### Permissions and Rules
 
-/mnt/tank/
-├── main_smb/ # User and group SMB shares
-├── vm_backup/ # NFS VM backup target for Proxmox
-├── pbs_datastore/ # Proxmox Backup Server storage (NFS)
-├── iso_library/ # ISO image & template repo (SMB/NFS, RO)
-└── docs_exports/ # Docs, configs, disaster recovery exports
+-/mnt/tank/
+- ├── main_smb/ # User and group SMB shares
+- ├── vm_backup/ # NFS VM backup target for Proxmox
+- ├── pbs_datastore/ # Proxmox Backup Server storage (NFS)
+- ├── iso_library/ # ISO image & template repo (SMB/NFS, RO)
+- └── docs_exports/ # Docs, configs, disaster recovery exports
+- 
 ---
 
 ### Snapshots, Validation & Retention
