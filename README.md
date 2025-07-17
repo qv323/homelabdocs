@@ -7,7 +7,7 @@ My goal is to create a functional, educational environment for learning and expe
 
 # Table of Contents
 - [Overview](#overview)
-- [Documentation & Reference Files](#documentation&reference-files)
+- [Documentation & Reference Files](#documentation-and-reference-files)
 - [Cluster Architecture](#cluster-architecture)
 - [Networking & VLANs](#networking--vlans)
 
@@ -70,7 +70,7 @@ My documentation here is meant to be a resource for myself and anyone interested
 
 ---
 
-## Documentation & Reference Files
+## Documentation and Reference Files
 
 Most detailed configuration files, best practices checklists, troubleshooting guides, and device inventory spreadsheets are maintained **offline** in the `/homelab docs` directory on my NAS and/or primary management workstation. These files are not included in this public repository to protect sensitive data and streamline maintenance.
 
