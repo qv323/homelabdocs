@@ -612,6 +612,12 @@ This section details all currently implemented backup routines, retention schedu
 - PBS and NAS credentials/keys are kept offline for security.
 - In the event of a full-site loss, a new Proxmox node can be built, PBS datastore attached, and VM/CTs restored. Network device and service configs can be restored to new hardware or VMs from NAS/USB backups.
 
+ - **Reference Docs**
+
+- NFS HA setup steps: Needs updated NFS HA Setup.docx (NAS)
+- Quick recovery and restore tips: Homelab Quick Fixes.pdf (NAS)
+
+
 ---
 
 ## 8. Best Practices
