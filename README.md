@@ -339,8 +339,7 @@ This section lists the core software, utilities, and hardware tools used to mana
 
 ---
 
-## [Add your own!]
-If you use Docker, WireGuard, Pi-hole, OPNsense, a label printer, etc., add a section with a short “How I Use It” note.
+## [Next one here]
 
 --- 
 
@@ -469,7 +468,7 @@ Then **reboot**:
 
 ### 6. Verify Upgrade
 
-After reboot, confirm with:
+After reboot, confirm with: **insert cmd here**
 
 ---
 
@@ -512,7 +511,7 @@ After reboot, confirm with:
  ```
 - Only use images for the ICX7250—using the wrong model may brick your device.
 - If upgrading both bootrom and OS, do bootrom first, then OS.
-- Don’t interrupt the switch during update or reboot.
+- Don’t interrupt the switch during update or reboot. **Make sure the weather is Nice/Boring**
 
 --- 
 
@@ -520,25 +519,87 @@ After reboot, confirm with:
 
 ---
 
+# Backups & Data Retention
 
-## Backup Routines
-
-- **VM Backups:**  
-  - Daily/weekly backups to NAS
-  - NFS and local ZFS storage pools
-
-- **Configuration Backups:**  
-  - Regular backup of Proxmox configs, OPNsense configs, Pi-hole configs
-  - Backups stored both on NAS and cold USB storage
-
-- **Test Restores:**  
-  - Periodic test restores to validate backup integrity
-
---- 
-
-[⬆️ Back to Top](#table-of-contents)
+This section details all currently implemented backup routines, retention schedules, storage locations, validation, and disaster recovery procedures in the homelab.  
+**Note:** All descriptions here reflect only what is presently in use. Planned or future enhancements are tracked separately in the “Future Plans” section.
 
 ---
+
+## 1. Proxmox Cluster Backups
+
+### Proxmox Backup Server (PBS)
+- PBS runs as a VM on the NAS (Dell 7050, 4x8TB RAID10). The PBS datastore is on the main RAID volume.
+- Nightly encrypted backups of all Proxmox VMs and containers are scheduled from every node (Dell 3080s, mATX, nuc1, etc.) to PBS over the 10Gb network.
+- **Retention Policy:** 7 daily, 4 weekly, 12 monthly backups per VM/CT, pruned automatically by PBS.
+- **Cold Storage:** After major changes and quarterly, the PBS datastore is manually exported or synced to an external SSD/HDD, which is kept offline except during backup operations.
+- **Validation:** A test restore (clone or mount) is performed at least monthly on a Proxmox node to ensure backup integrity. PBS and Proxmox backup logs are reviewed weekly.
+- **Disaster Recovery:** In case of major failure, a new Proxmox node is deployed, PBS datastore is reattached (from NAS or the most recent cold backup), and restores are performed as needed. PBS credentials and keys are stored offline.
+
+---
+
+## 2. NAS & Storage Backups
+
+- NAS configuration (TrueNAS, ZFS pool, and share settings) is exported after any major change and on a monthly basis.
+- Critical share data (documentation, scripts, playbooks, personal files) is mirrored to a secondary volume on the NAS and copied to an external HDD quarterly for cold storage.
+- VM template exports and important ISO images are stored on the NAS and included in regular cold storage copies.
+
+---
+
+## 3. Network Device & Service Configs
+
+- **MikroTik CRS310:** Config is exported after major changes and monthly using `/export file=backup` and/or `/system backup save`, with copies kept on NAS and USB.
+- **Brocade ICX7250:** Running/startup configs are exported via TFTP or manually and saved to the NAS and cold USB storage.
+- **Pi-hole, OPNsense, Unbound:** Configs are exported via web UI after significant changes and monthly. All configs are stored on the NAS and included in cold storage rotation.
+- **Datto and other appliances:** Configurations are exported as available and archived with the same schedule.
+
+---
+
+## 4. Documentation & Automation
+
+- All current infrastructure documentation, diagrams, and scripts are stored on the NAS and included in the regular cold backup rotation.
+- Automation tools (e.g., Ansible playbooks, scripts) are also stored on the NAS and external backup devices.
+- Restore steps and procedures are included in the `/Docs_Exports` folder on the NAS and in cold storage media.
+
+---
+
+## 5. Backup Schedules & Validation
+
+| Task/Item                      | Frequency         | Storage Location           | Validation/Test                    |
+|--------------------------------|-------------------|----------------------------|------------------------------------|
+| PBS (VM/CT backups)            | Nightly           | NAS RAID10, Ext. SSD/HDD   | Monthly restore/test               |
+| PBS (pruning)                  | Weekly auto       | NAS RAID10                 | Review logs weekly                 |
+| NAS config export              | Monthly/after chg | NAS, USB/SSD               | Mount/restore as test              |
+| NAS share data cold copy       | Quarterly         | Ext. HDD                   | Manual file check                  |
+| MikroTik/Brocade config export | After chg/monthly | NAS, USB                   | Import/restore as test             |
+| Pi-hole/OPNsense/Unbound conf  | After chg/monthly | NAS, USB                   | Import/restore as test             |
+| Docs/scripts/automation        | Ongoing           | NAS, USB/SSD               | Manual verify quarterly            |
+
+---
+
+## 6. Data Retention Policy
+
+- **VM/CT Images:** 7 daily, 4 weekly, 12 monthly (PBS pruning).
+- **Configs/Docs:** All versions maintained on NAS and USB; cold copies kept for at least 1 year.
+
+---
+
+## 7. Disaster Recovery & Restore Plan
+
+- Restore procedures for Proxmox/PBS, NAS, and all configs are documented in `/Docs_Exports` and included in cold backup sets.
+- PBS and NAS credentials/keys are kept offline for security.
+- In the event of a full-site loss, a new Proxmox node can be built, PBS datastore attached, and VM/CTs restored. Network device and service configs can be restored to new hardware or VMs from NAS/USB backups.
+
+---
+
+## 8. Best Practices
+
+- Backups are validated monthly with test restores or mounts.
+- All logs are checked when failures occur.
+- Documentation is updated after any major infrastructure or network change. And the ever-present 'that sucked to fix, i should write it down for my future self'
+- Multiple backup layers are maintained: PBS for rapid recovery, NAS/USB for long-term/cold storage.
+- **No critical data exists in only one place.**
+
 
 ## Automation
 
@@ -565,7 +626,7 @@ After reboot, confirm with:
   - VLAN/tagged bridge networking and storage integration
 
 - **VMware (enterprise parallel):**
-  - Principles learned in homelab translate to VDI/VMware setups in banks:
+  - Principles learned in homelab translate to VDI/VMware setups in fintech:
     - Clustering = high availability
     - Centralized management = easier compliance, audits, patching
     - Fast failover, disaster recovery, and rollback
@@ -596,8 +657,11 @@ After reboot, confirm with:
 - Add more automation for VM provisioning and monitoring
 - Experiment with advanced VLAN routing and firewalling
 - Explore hybrid cloud scenarios (self-hosted + cloud)
-- Continue improving documentation and sharing lessons
-
+- Version control via GitHub or cloud is not currently implemented for infrastructure documentation and automation
+- Personal/family data:** Retained indefinitely on NAS with offsite cold backup
+- Implement Proxmox API and PowerCLI for automation
+- Logs that capture failures sent via some app to notify me
+  
 --- 
 
 [⬆️ Back to Top](#table-of-contents)
