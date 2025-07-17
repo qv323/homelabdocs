@@ -541,7 +541,7 @@ After reboot, confirm with: **insert cmd here**
 
 ---
 
-# Backups & Data Retention
+## Backups & Data Retention
 
 This section details all currently implemented backup routines, retention schedules, storage locations, validation, and disaster recovery procedures in the homelab.  
 **Note:** All descriptions here reflect only what is presently in use. Planned or future enhancements are tracked separately in the “Future Plans” section.
