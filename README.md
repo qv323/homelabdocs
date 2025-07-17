@@ -104,9 +104,9 @@ When a section in this README refers to a specific guide, checklist, or referenc
   - Management interfaces separated from production via VLANs
   - Automated VM deployment templates
  
-    # Hardware Details
+# Hardware Details
 
-This section covers the physical components in my homelab, including compute, storage, networking, rack layout, and cooling. My design choices focus on modularity, reliability, and creative problem-solving on a budget—using techniques from enterprise IT (clustering, redundancy, VLANs), adapted to a home lab environment.
+  This section covers the physical components in my homelab, including compute, storage, networking, rack layout, and cooling. My design choices focus on modularity, reliability, and creative problem-solving on a budget—using techniques from enterprise IT (clustering, redundancy, VLANs), adapted to a home lab environment.
 
 ---
 
@@ -249,7 +249,7 @@ This section covers the physical components in my homelab, including compute, st
 - Physical wiring and quick reference diagrams: cluster config back script check.png (NAS)
 - VLAN port assignments: Needs updated Homelab VLAN Port Assignment Table.xlsx (NAS)
 
-- **Reference Diagram:**  
+- **Reference Diagrams:**  
   _(upload or link to a network diagram image here)_
 
 --- 
@@ -380,7 +380,7 @@ This section lists the core software, utilities, and hardware tools used to mana
   - Proxmox cluster provides node failover (VMs move to another node if hardware fails)
   - Practice restoring VMs from backup and snapshots
 
-- **Documentation:**  
+- **Reference Docs:**  
   - All procedures for failover, restore, and snapshotting are written and tested
   - 
 --- 
@@ -642,8 +642,9 @@ This section details all currently implemented backup routines, retention schedu
 - **Monitoring:**  
   - Basic monitoring scripts for resource usage, network health, and alerts
 
-- **Documentation:**  
+- **Reference Docs:**  
   - All scripts and automations are documented for easy reuse
+    - Quick recovery and restore tips: Homelab Quick Fixes.pdf (NAS)
 
 --- 
 
