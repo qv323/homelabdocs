@@ -60,7 +60,7 @@ My goal is to create a functional, educational environment for learning and expe
 - [Automation](#automation)
 - [Proxmox & VMware Notes](#proxmox--vmware-notes)
 - [Lessons Learned & Best Practices](#lessons-learned--best-practices)
-- [Future Plans](#future-plan)
+- [Future Plans](#future-plans)
 
 ---
 
@@ -707,7 +707,7 @@ This section details all currently implemented backup routines, retention schedu
 ## Future Plans
 
 This section lists projects, ideas, and improvements I am considering or planning for my homelab environment.  
-Many of these have supporting documentation or drafts stored in the `/homelab docs` directory (NAS), but are **not yet implemented, tested, or up to date**.
+Many of these have supporting documentation or drafts stored in the `/homelab docs` directory, but are **not yet implemented, tested, or up to date**.
 
 ### Planned / Draft Guides and Ideas
 
