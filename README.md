@@ -646,6 +646,17 @@ This section details all currently implemented backup routines, retention schedu
 - Scripting and templates save hours in the long run
 - Clear, simple documentation helps period
 
+## Lessons Learned & Best Practices
+
+- I update documentation after every significant change, especially after troubleshooting or complex fixes.
+- My full best practices checklist is maintained as a living document:  
+  📄 [Homelab Best Practices Checklist.docx] (NAS)
+- For quick solutions and troubleshooting notes, see:  
+  📄 [Homelab Quick Fixes.pdf] (NAS)
+
+> “That sucked to fix, so I wrote it down for my future self.”
+
+
 --- 
 
 [⬆️ Back to Top](#table-of-contents)
