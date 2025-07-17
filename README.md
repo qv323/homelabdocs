@@ -74,7 +74,7 @@ My documentation here is meant to be a resource for myself and anyone interested
 
 Most detailed configuration files, best practices checklists, troubleshooting guides, and device inventory spreadsheets are maintained **offline** in the `/homelab docs` directory on my NAS and/or primary management workstation. These files are not included in this public repository to protect sensitive data and streamline maintenance.
 
-When a section in this README refers to a specific guide, checklist, or reference, look for the document by name in the `/homelab docs` folder on the NAS.
+When a section in this README refers to a specific guide, checklist, or reference, look for the document by name in the `/homelab docs` folder on the NAS and or management laptop.
 
 ---
 
