@@ -322,7 +322,7 @@ When a section in this README refers to a specific guide, checklist, or referenc
 
 ---
 
-### Permissions and Rules
+### Storage Tree
 
 -/mnt/tank/
 - ├── main_smb/ # User and group SMB shares
@@ -378,10 +378,6 @@ When a section in this README refers to a specific guide, checklist, or referenc
 ---
 
 **All ISO images, custom templates, and golden images are covered by the same snapshot and cold/offsite backup as the rest of the core datasets—no risk of accidental loss or silent drift.**
-
----
-
-### Storage Tree
 
 ---
 
