@@ -12,8 +12,8 @@ My goal is to create a functional, educational environment for learning and expe
 - [Cluster Architecture](#cluster-architecture)
 - [Virtual Machines](#virtual-machines)
 - [Containers](#containers)
-
 - [Networking & VLANs](#networking--vlans)
+- [Network Shares & ISO Library](#network-shares--iso-library)
 
 <details>
 <summary><strong>Tools</strong></summary>
@@ -282,6 +282,19 @@ When a section in this README refers to a specific guide, checklist, or referenc
 --- 
 
 [⬆️ Back to Top](#table-of-contents)
+
+---
+
+## Network Shares & ISO Library
+
+| Share Name         | Type      | Host (Node)   | Path / Volume           | Purpose / Usage                   | Access / Notes          |
+|--------------------|-----------|---------------|-------------------------|------------------------------------|-------------------------|
+| main_smb           | SMB/CIFS  | NAS (TrueNAS) | /mnt/tank/main_smb      | Primary user and data share        | Accessible via \\nas\main_smb |
+| vm_backup          | NFS       | NAS (TrueNAS) | /mnt/tank/vm_backup     | Proxmox VM backup datastore        | NFS mounted to all nodes |
+| pbs_datastore      | NFS       | NAS (TrueNAS) | /mnt/tank/pbs_datastore | Proxmox Backup Server storage      | Connected via 10GbE      |
+| iso_library        | SMB/NFS   | NAS (TrueNAS) | /mnt/tank/iso_library   | Shared ISOs for VM builds          | Mounts as Proxmox ISO repo |
+| docs_exports       | SMB/NFS   | NAS (TrueNAS) | /mnt/tank/docs_exports  | Documentation & config exports     | Archived regularly       |
+
 
 ---
 
