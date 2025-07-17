@@ -548,7 +548,7 @@ This section details all currently implemented backup routines, retention schedu
 **Note:** All descriptions here reflect only what is presently in use. Planned or future enhancements are tracked separately in the “Future Plans” section.
 
 - **Backups**
-- NFS HA setup steps: Needs updated NFS HA Setup.docx (NAS)
+  - NFS HA setup steps: Needs updated NFS HA Setup.docx (NAS)
   
 ---
 
