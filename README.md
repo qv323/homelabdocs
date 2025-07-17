@@ -10,6 +10,9 @@ My goal is to create a functional, educational environment for learning and expe
 - [Documentation & Reference Files](#documentation-and-reference-files)
 - [Hardware & Inventory](#hardware-and-Inventory)
 - [Cluster Architecture](#cluster-architecture)
+- [Virtual Machines](#virtual-machines)
+- [Containers](#containers)
+
 - [Networking & VLANs](#networking--vlans)
 
 <details>
@@ -170,6 +173,15 @@ When a section in this README refers to a specific guide, checklist, or referenc
 --- 
 
 [⬆️ Back to Top](#table-of-contents)
+
+---
+
+## Virtual Machines
+
+| Name           | Host/Node       | OS                | Services/Apps        | Network / VLAN  | Resources      | Notes                  |
+|----------------|-----------------|-------------------|----------------------|-----------------|---------------|------------------------|
+|                |                 |                   |                      |                 |               |                        |
+
 
 ---
 
