@@ -297,6 +297,66 @@ When a section in this README refers to a specific guide, checklist, or referenc
 | iso_library        | SMB/NFS   | NAS (TrueNAS) | /mnt/tank/iso_library   | Shared ISOs for VM builds          | Mounts as Proxmox ISO repo |
 | docs_exports       | SMB/NFS   | NAS (TrueNAS) | /mnt/tank/docs_exports  | Documentation & config exports     | Archived regularly       |
 
+---
+
+## ZFS Pools & Datasets
+
+### ZFS Pool Summary
+
+| Pool Name | Host (Node)   | Type         | Drives/RAID         | Size          | Mount Point   | Notes                                |
+|-----------|---------------|--------------|---------------------|---------------|--------------|---------------------------------------|
+| tank      | NAS (TrueNAS) | ZFS RAID 10  | 4 × 8TB SAS HDD     | ~14.5TB use   | /mnt/tank    | Main pool: all shares, VMs, backups   |
+| boot-pool | NAS (TrueNAS) | ZFS Mirror   | 2 × 256GB NVMe      | 230GB         | N/A          | TrueNAS OS and system boot only       |
+
+---
+
+### ZFS Datasets
+
+| Dataset         | Pool   | Mount Point             | Share Type   | ZFS Properties                       | Purpose / Usage                  | Snapshots         | Notes                                    |
+|-----------------|--------|-------------------------|--------------|---------------------------------------|----------------------------------|-------------------|------------------------------------------|
+| main_smb        | tank   | /mnt/tank/main_smb      | SMB          | compression=lz4, atime=off            | User shares, home dirs           | Daily, 7d         | Regular backup; full permissions         |
+| vm_backup       | tank   | /mnt/tank/vm_backup     | NFS          | sync=always, compression=off          | Proxmox VM backup target         | Nightly, 30d      | Proxmox storage.cfg NFS path             |
+| pbs_datastore   | tank   | /mnt/tank/pbs_datastore | NFS          | compression=zstd, recordsize=1M       | Proxmox Backup Server            | PBS policy        | Direct 10GbE NFS for PBS VM              |
+| iso_library     | tank   | /mnt/tank/iso_library   | SMB/NFS      | readonly=on, compression=lz4          | ISOs, templates                  | Weekly, 90d       | Included in all snapshot/cold backups    |
+| docs_exports    | tank   | /mnt/tank/docs_exports  | SMB/NFS      | snapdir=visible, compression=lz4       | Exported configs, docs           | Weekly, 90d       | DR configs/exports; Owner RW, others RO |
+
+---
+
+### Permissions and Rules
+
+/mnt/tank/
+├── main_smb/ # User and group SMB shares
+├── vm_backup/ # NFS VM backup target for Proxmox
+├── pbs_datastore/ # Proxmox Backup Server storage (NFS)
+├── iso_library/ # ISO image & template repo (SMB/NFS, RO)
+└── docs_exports/ # Docs, configs, disaster recovery exports
+---
+
+### Snapshots, Validation & Retention
+
+| Dataset         | Schedule     | Retention    | Restore Validation           | Cold/Offsite Coverage        |
+|-----------------|--------------|-------------|------------------------------|------------------------------|
+| main_smb        | Daily 2AM    | 7 days      | Monthly restore test         | Yes, quarterly to ext. SSD   |
+| vm_backup       | Nightly      | 30 days     | Proxmox auto + manual test   | Yes, quarterly to ext. SSD   |
+| pbs_datastore   | PBS policy   | As set in PBS | PBS restore test monthly     | Yes, quarterly to ext. SSD   |
+| iso_library     | Weekly Sun   | 90 days     | Manual file check quarterly  | Yes, quarterly to ext. SSD   |
+| docs_exports    | Weekly Sun   | 90 days     | Manual import after update   | Yes, quarterly to ext. SSD   |
+
+*All ZFS snapshots for critical datasets are included in the cold/offsite (external SSD/HDD) backup, performed quarterly and after major changes.*
+
+---
+
+### Dataset Permissions & Access
+
+- **main_smb**: TrueNAS SMB ACLs, users/groups RW, backup subfolder for IT RW only.
+- **vm_backup / pbs_datastore**: NFS exports to trusted Proxmox nodes (root_squash, secure).
+- **iso_library**: Read-only for all users except admin; included in backup and restore tests.
+- **docs_exports**: Owner RW, others RO; protected by regular snapshot and offsite export.
+
+---
+
+### Storage Tree
+
 
 ---
 
