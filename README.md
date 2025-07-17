@@ -56,7 +56,7 @@ My goal is to create a functional, educational environment for learning and expe
 
 - [Disaster Recovery](#disaster-recovery)
 - [Update & Patch Management](#update--patch-management)
-- [Backup Routines](#backupa-and-data-retention)
+- [Backup Routines](#backups-and-data-retention)
 - [Automation](#automation)
 - [Proxmox & VMware Notes](#proxmox--vmware-notes)
 - [Lessons Learned & Best Practices](#lessons-learned--best-practices)
