@@ -8,6 +8,7 @@ My goal is to create a functional, educational environment for learning and expe
 # Table of Contents
 - [Overview](#overview)
 - [Documentation & Reference Files](#documentation-and-reference-files)
+- [Hardware & Inventory](#hardware-and-Inventory)
 - [Cluster Architecture](#cluster-architecture)
 - [Networking & VLANs](#networking--vlans)
 
@@ -76,6 +77,14 @@ Most detailed configuration files, best practices checklists, troubleshooting gu
 
 When a section in this README refers to a specific guide, checklist, or reference, look for the document by name in the `/homelab docs` folder on the NAS and or management laptop.
 
+---
+
+## Hardware & Inventory
+
+- Full device inventory: Homelab Device Tracker.xlsx (NAS)
+- mATX Proxmox node configuration: mATX Proxmox Node Reference.pdf (NAS)
+- Bill of materials for 10Gb networking (NICs, cables, adapters): Homelab 10Gb DAC BOM.xlsx (NAS)
+  
 ---
 
 ## Cluster Architecture
