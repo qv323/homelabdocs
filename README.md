@@ -7,6 +7,7 @@ My goal is to create a functional, educational environment for learning and expe
 
 # Table of Contents
 - [Overview](#overview)
+- [Documentation & Reference Files](#documentation & reference files)
 - [Cluster Architecture](#cluster-architecture)
 - [Networking & VLANs](#networking--vlans)
 
@@ -66,6 +67,14 @@ My goal is to create a functional, educational environment for learning and expe
 
 This homelab is built to mirror real-world IT infrastructure on a small scale. I use clustering, virtualization, VLAN segmentation, automated backups, and scripting to test ideas and simulate production scenarios. 
 My documentation here is meant to be a resource for myself and anyone interested in homelab or IT operations.
+
+---
+
+## Documentation & Reference Files
+
+Most detailed configuration files, best practices checklists, troubleshooting guides, and device inventory spreadsheets are maintained **offline** in the `/homelab docs` directory on my NAS and/or primary management workstation. These files are not included in this public repository to protect sensitive data and streamline maintenance.
+
+When a section in this README refers to a specific guide, checklist, or reference, look for the document by name in the `/homelab docs` folder on the NAS.
 
 ---
 
